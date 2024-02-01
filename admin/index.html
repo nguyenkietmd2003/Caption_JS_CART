@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      table, th, td {
+  border: 1px solid;
+  text-align: center;
+}
+    </style>
+  </head>
+  <body>
+    <div style="text-align: center; color: blueviolet; font-weight: 900; font-size: 40px;">Admin</div>
+
+    <br><br><br><br><br>
+    <div class="container">
+      <button class="btn btn-primary" id="tc">Sắp xếp giá từ thấp đến cao</button>
+      <button class="btn btn-dark" id="ct">Sắp xếp giá từ cao đến thấp</button>
+      <button class="btn btn-dark" id="cc">
+        <a href="../index.html">Chuyển sang trang Product</a>
+      </button>
+    </div>
+    <div class="container">
+      <div>
+        <label for="">Search by name</label>
+        <input type="text"
+          class="form-control" name="" id="searchInput" aria-describedby="helpId" placeholder="">
+      </div>
+      <span style="display: block;"></span>
+      <button class="btn btn-danger" id="search">Search</button>
+    </div>
+    <div class="container mt-5" >
+        <button id="add" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Create A New Car</button>
+        <form id="myForm" class="mt-5">
+          
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                      <label for="" style="font-weight: 800;">Name(Nhập Tên)</label>
+                      <input class="form-control" id="name"></input>
+                      <span class="span-TB" id="tbname" style="display: block; color: red;"></span>
+                      <label for="" style="font-weight: 800;">Price(Nhập Giá)</label>
+                      <input class="form-control" id="price"></input>
+                      <span class="span-TB" id="tbprice" style="display: block; color: red;"></span>
+                      <label for="" style="font-weight: 800;">Screen(Nhập số inch)</label>
+                      <input class="form-control" id="screen"></input>
+                      <span class="span-TB" id="tbscreen" style="display: block; color: red;"></span>
+                      <label for="" style="font-weight: 800;">BlackCamera(Nhập chỉ số Camera sau)</label>
+                      <input class="form-control" id="blackcamera"></input>
+                      <span class="span-TB" id="tbblackcamera" style="display: block; color: red;"></span>
+                      <label for="" style="font-weight: 800;">FrontCamera(Nhập chỉ số Camera trước)</label>
+                      <input class="form-control" id="frontcamera"></input>
+                      <span class="span-TB" id="idfrontcamera" style="display: block; color: red;"></span>
+                      <label for="" style="font-weight: 800;">Image-URL(Nhập đường Link ảnh)</label>
+                      <input class="form-control" id="img"></input>
+                      <span class="span-TB" id="tbimg" style="display: block; color: red;"></span>
+                      <label for="" style="font-weight: 800;">Description(Nhập mô tả)</label>
+                      <input class="form-control" id="desc"></input>
+                      <span class="span-TB" id="tbdesc" style="display: block; color: red;"></span>
+                      <label for="" style="font-weight: 800;">Type(Chọn loại điện thoại)</label>
+                      <select class="form-control" name="" id="type" >
+                        <option value="samsung" selected>Samsung</option>
+                        <option value="iphone">Iphone</option>
+                      </select>
+                      <span class="span-TB" id="tbtype" style="display: block; color: red;"></span>
+                    </div>
+                  </form>
+                </div>
+                <div  class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button  type="button"  class="btn btn-primary" id="addPhone">Add</button>
+                  <button type="button"  class="btn btn-primary" id="UpdatePhone">Update</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          </form>
+    </div>
+    <table class="container" >
+      <thead>
+        <tr>
+          <th>ID</th>
+           <th>NamePhone</th>
+           <th>Price</th>
+           <th>Description</th>
+           <th>Type</th>
+          </tr>
+      </thead>
+      <tbody id="tableListPhone">
+        
+      </tbody>
+    </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js" integrity="sha512-TjBzDQIDnc6pWyeM1bhMnDxtWH0QpOXMcVooglXrali/Tj7W569/wd4E8EDjk1CwOAOPSJon1VfcEt1BI4xIrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="phone.js"></script>
+    <script src="validation.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,242 @@
+//color
+$color-blue-100: #2a72dc;
+$color-blue-200: #1d355e;
+$color-gray-100: #f7f9fe;
+$color-yellow-100: #f9d30f;
+$color-white: #ffffff;
+//font-size
+$fs-title: 60px;
+$fs-nav: 16px;
+$fs-sub-title: 20px;
+$fs-paragraph: 18px;
+$fs-mini-title: 34px;
+//font-weight
+$fw-normal: 400;
+$fw-bold: 700;
+$fw-semi-bold: 600;
+
+*{
+    padding: 0;;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+@mixin styleEleA ($fs, $fw, $color) {
+    text-decoration: none;
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+}
+
+@mixin styleText ($fs, $fw, $color) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+}
+
+@mixin styleButton ($bg, $color, $shadow) {
+    border: 2px solid $color-blue-100;
+    background-color: $bg;
+    color: $color;
+    box-shadow: $shadow;
+    border-radius: 8px;
+    padding: 6px 8px;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color;
+        color: $bg;
+    }
+}
+
+header {
+    padding: 30px 0;
+    background: $color-gray-100;
+    box-shadow: 0 2px 4px #e2ebfc;
+
+    .header_content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .header_logo {
+            a {
+                @include styleEleA(32px, $fw-bold ,$color-blue-100 )
+            }
+        }
+
+        .header_nav {
+            ul {
+                list-style: none;
+                display: flex;
+
+                li {
+                    margin: 0 10px;
+                    position: relative;
+
+                    &.active {
+                        a {
+                            color: $color-blue-100;
+                            &::before {
+                                width: 100%;
+                            }
+                        }
+                    }
+                    a {
+                        @include styleEleA($fs-sub-title, $fw-normal ,$color-blue-200);
+
+                        &::before {
+                            content: " ";
+                                    position: absolute;
+                                    display: block;
+                                    width: 0;
+                                    height: 3px;
+                                    background-color: $color-blue-100;
+                                    bottom: 0;
+                                    left: 0;
+                                    transition: all 0.5s;
+                        }
+                    }
+                    .icon-cart {
+                        @include styleButton($color-white,$color-blue-100 ,rgba(248, 240, 240, 0.24) 0px 3px 8px);
+                        position: relative;
+
+                        span {
+                            position: absolute;
+                            background-color: red;
+                            width: 30px;
+                            height: 30px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 50%;
+                            color: #fff;
+                            top: 50%;
+                            right: -20px;
+                        }
+                    }
+
+                    &:hover {
+                        a {
+                            color: $color-blue-100;
+                            &::before {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                
+            }
+        }
+    }
+}
+
+.banner {
+    padding: 50px 0;
+    // height: 70vh;
+    background-image: url(../image/product-header-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    .banner_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .banner_left {
+            padding-bottom: 130px;
+            h1 {
+                @include styleText($fs-title,$fw-bold ,$color-blue-100 )
+            }
+
+            .sub-title {
+                @include styleText($fs-sub-title,$fw-semi-bold,$color-blue-200 )
+            }
+
+            p {
+                @include styleText($fs-paragraph,$fw-normal ,$color-blue-200 )
+            }
+        }
+
+        .banner_right {
+            text-align: right;
+
+            img {
+                width: 70%;
+            }
+            
+        }
+    }
+}
+
+.products {
+    padding: 50px 0;
+    .product-title {
+        text-align: center;
+        @include styleText($fs-mini-title,$fw-bold ,$color-blue-200 )
+    }
+
+    .product-select {
+        text-align: center;
+        padding-bottom: 15px;
+        .col {
+            .custom-select {
+                border-radius: 5px;
+                @include styleButton($color-white,$color-blue-100 ,rgba(248, 240, 240, 0.24) 0px 3px 8px);
+            }
+        }
+    }
+
+    .listProduct {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+        .product-item {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 20px 60px;
+
+            img {
+                width: 100%;
+                padding-bottom: 10px;
+            }
+            
+            p {
+                @include styleText($fs-paragraph,$fw-semi-bold ,$color-blue-200);
+            }
+
+            .item-text {
+                display: flex;
+                justify-content: space-between;
+               h3 {
+                @include styleText(26px,$fw-bold ,$color-blue-100 );
+                
+               } 
+               p {
+                @include styleText(26px,$fw-bold ,$color-blue-100)
+               }
+            }
+
+            .rate {
+                @include styleText(20px,$fw-bold ,$color-yellow-100)
+            }
+
+            .add-to-cart {
+                @include styleButton($color-blue-100,$color-white,rgba(248, 240, 240, 0.24) 0px 3px 8px);
+                @include styleText(20px,$fw-normal ,$color-white);
+                padding: 10 30px;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font-Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./asset/css/style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header_content">
+                <div class="header_logo">
+                    <a href="#">ZeroPhone</a>
+                </div>
+                <div class="header_nav">
+                    <ul>
+                        <li class="active">
+                            <a href="./admin/index.html">Admin</a>
+                        </li>
+                        <li>
+                            <div class="icon-cart">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span>0</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="banner">
+        <div class="container">
+            <div class="banner_content">
+                <div class="banner_left">
+                    <h1>ZeroPhone</h1> <br>
+                    <p class="sub-title">Death is like the wind <br> always by my side!</p> <br>
+                    <p>People keep running into my blade. I'll give you the easy way out. </p>
+                </div>
+                <div class="banner_right">
+                    <img src="./asset/image/product-header2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="products">
+        <div class="container">
+            <div class="product-title">
+                <h2>-Featured Products-</h2>
+            </div>
+            <div class="product-select">
+                <div class="form-group row">
+                    <div class="col">
+                        <select class="custom-select" id="productFilter">
+                            <option selected value="all">Select</option>
+                            <option value="iphone">Iphone</option>
+                            <option value="samsung">Samsung</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="listProduct" id="product-list">
+
+            </div>
+        </div>
+    </section>
+    <!-- Modal Giỏ Hàng -->
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+
+        </div>
+        <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="clear_all">Clear All</button>
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <!-- axios  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js"
+        integrity="sha512-TjBzDQIDnc6pWyeM1bhMnDxtWH0QpOXMcVooglXrali/Tj7W569/wd4E8EDjk1CwOAOPSJon1VfcEt1BI4xIrA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- BT Bundle-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- My js -->
+    <script type="module" src="./customer/controller/v2/main-v2.js"></script>
+</body>
+
+</html>
